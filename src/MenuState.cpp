@@ -3,18 +3,27 @@
 #include <Helpers.hpp>
 
 MenuState::MenuState(StateStack& stack, Context context)
-	: State(stack, context)
+: State(stack, context)
+, mOptionIndex(0)
 {
-	auto font = context.fonts->get(Fonts::Sansation);
+	sf::Texture& texture = context.textures->get(Textures::TitleScreen);
+	sf::Font& font = context.fonts->get(Fonts::Sansation);
+
+	mBackgroundSprite.setTexture(texture);
+	centerOrigin(mBackgroundSprite);
+	mBackgroundSprite.setPosition(0.f, 0.f);
+
 	sf::Text playOption;
 	playOption.setFont(font);
 	playOption.setString("Play");
-	centerOrigin(playOption);
-	
-	playOption.setPosition(context.window->getView().getSize() / 2.f);
+	playOption.setPosition(0.f, -50.f);
 	mOptions.push_back(playOption);
-}
+	playOption.setString("quit");
+	playOption.move(0, -50);
+	mOptions.push_back(playOption);
 
+	updateOptionText();
+}
 
 void MenuState::updateOptionText()
 {
@@ -28,9 +37,17 @@ void MenuState::updateOptionText()
 
 void MenuState::draw()
 {
+	sf::RenderWindow& window = *getContext().window;
+
+	window.setView(window.getDefaultView());
+	window.draw(mBackgroundSprite);
+
 	updateOptionText();
-	for(const auto& option: mOptions)
-		getContext().window->draw(option);
+	for (const auto& option : mOptions)
+	{
+	window.draw(option);
+
+	}
 }
 
 bool MenuState::update(sf::Time dt)
@@ -44,11 +61,12 @@ bool MenuState::handleEvent(const sf::Event& event)
 	if(event.key.code == Keyboard::Up)
 	{
 		if(mOptionIndex > 0)
-			mOptionIndex--;
+				mOptionIndex--;
 		else
 			mOptionIndex = mOptions.size() - 1;
 
 		updateOptionText();
+
 	}
 
 	if(event.key.code == Keyboard::Down)
@@ -60,21 +78,26 @@ bool MenuState::handleEvent(const sf::Event& event)
 
 		updateOptionText();
 	}
-	
+
 	if(event.key.code == Keyboard::Enter)
 	{
 		if(mOptionIndex == Play)
 		{
-			requestStackPop();
+		requestStackPop();
 #ifndef NDEBUG
-			requestStateClear();
+		requestStateClear();
 #endif
-			requestStackPush(States::Game);
+		requestStackPush(States::Game);
+
 		}
 		if(mOptionIndex == Exit)
 		{
-			requestStackPop();
+		requestStackPop();
+
 		}
+
 	}
 	return false;
+
 }
+

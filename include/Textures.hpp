@@ -6,7 +6,8 @@ namespace Textures
 	enum ID
 	{
 		MainCharacter,
-		Background
+		Background,
+		TitleScreen
 	};
 };
 

@@ -42,9 +42,10 @@ build/linux/debug/MenuState.o: src/MenuState.cpp include/Fonts.hpp \
   Dependencies/SFML/include/SFML/Window/WindowHandle.hpp \
   Dependencies/SFML/include/SFML/Window/WindowStyle.hpp \
   Dependencies/SFML/include/SFML/System/Clock.hpp include/Textures.hpp \
-  include/States.hpp Dependencies/SFML/include/SFML/Graphics/Text.hpp \
+  include/States.hpp Dependencies/SFML/include/SFML/Graphics/Sprite.hpp \
   Dependencies/SFML/include/SFML/Graphics/Drawable.hpp \
   Dependencies/SFML/include/SFML/Graphics/Transformable.hpp \
+  Dependencies/SFML/include/SFML/Graphics/Text.hpp \
   Dependencies/SFML/include/SFML/Graphics/VertexArray.hpp \
   include/Helpers.hpp Dependencies/SFML/include/SFML/Graphics/Shape.hpp
 
@@ -146,11 +147,13 @@ include/Textures.hpp:
 
 include/States.hpp:
 
-Dependencies/SFML/include/SFML/Graphics/Text.hpp:
+Dependencies/SFML/include/SFML/Graphics/Sprite.hpp:
 
 Dependencies/SFML/include/SFML/Graphics/Drawable.hpp:
 
 Dependencies/SFML/include/SFML/Graphics/Transformable.hpp:
+
+Dependencies/SFML/include/SFML/Graphics/Text.hpp:
 
 Dependencies/SFML/include/SFML/Graphics/VertexArray.hpp:
 

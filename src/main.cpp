@@ -3,16 +3,16 @@
 
 int main()
 {
-	try
-	{
+ 	try
+ 	{
 		Application app;
 		app.run();
-	}
-	catch (const std::exception& e)
-	{
-		std::cout << "EXEPTION: " << e.what();
-		std::cin.ignore();
-	}
+ 	}
+ 	catch (const std::exception& e)
+ 	{
+ 		std::cout << "EXEPTION: " << e.what();
+ 		std::cin.ignore();
+ 	}
 
 	return 0;
 }
