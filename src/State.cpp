@@ -3,12 +3,12 @@
 
 void State::requestStackPop()
 {
-
+	mStack->popState();
 }
 
 void State::requestStateClear()
 {
-
+	mStack->clearStates();
 }
 
 void State::requestStackPush(States::ID stateID)

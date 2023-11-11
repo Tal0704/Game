@@ -20,6 +20,9 @@ private:
 
 	void registerStates();
 
+	void loadResources();
+
+
 	sf::RenderWindow mWindow;
 	sf::Event mEvent;
 	bool mIsPaused = false;
@@ -32,4 +35,11 @@ private:
 	World mWorld;
 	Player mPlayer;
 	StateStack mStateStack;
+
+#ifndef NDEBUG
+	bool mDebug = false;
+	sf::Text mStatisticsText;
+	void updateStatistics(sf::Time dt);
+#endif
+
 };

@@ -45,8 +45,7 @@ void MenuState::draw()
 	updateOptionText();
 	for (const auto& option : mOptions)
 	{
-	window.draw(option);
-
+		window.draw(option);
 	}
 }
 
@@ -58,7 +57,7 @@ bool MenuState::update(sf::Time dt)
 bool MenuState::handleEvent(const sf::Event& event)
 {
 	using sf::Keyboard;
-	if(event.key.code == Keyboard::Up)
+	if((event.type == sf::Event::KeyPressed) && (event.key.code == Keyboard::Up))
 	{
 		if(mOptionIndex > 0)
 				mOptionIndex--;
@@ -69,7 +68,7 @@ bool MenuState::handleEvent(const sf::Event& event)
 
 	}
 
-	if(event.key.code == Keyboard::Down)
+	if((event.type == sf::Event::KeyPressed) && (event.key.code == Keyboard::Down))
 	{
 		if(mOptionIndex < mOptions.size() - 1)
 			mOptionIndex++;
@@ -79,21 +78,23 @@ bool MenuState::handleEvent(const sf::Event& event)
 		updateOptionText();
 	}
 
-	if(event.key.code == Keyboard::Enter)
+	if((event.type == sf::Event::KeyPressed) && (event.key.code == Keyboard::Enter))
 	{
 		if(mOptionIndex == Play)
 		{
-		requestStackPop();
+			requestStackPop();
 #ifndef NDEBUG
-		requestStateClear();
+			requestStateClear();
 #endif
-		requestStackPush(States::Game);
+			requestStackPush(States::Game);
 
 		}
 		if(mOptionIndex == Exit)
 		{
-		requestStackPop();
-
+			requestStackPop();
+#ifndef NDEBUG
+			requestStateClear();
+#endif
 		}
 
 	}

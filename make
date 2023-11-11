@@ -15,15 +15,18 @@ TitleState::TitleState(StateStack& stack, Context context)
 	sf::Font& font = context.fonts->get(Fonts::Sansation);
 
 //	sf::RenderWindow& window = *context.window;
-
+//
 	mBackground.setTexture(texture);
 	centerOrigin(mBackground);
 	mBackground.setPosition(0.f, 0.f);
 
-	mText.setString("Press any key to continue!");
 	mText.setFont(font);
+	mText.setString("Press any key to continue!");
 	centerOrigin(mText);
-
+	centerOrigin(s);
+	s.setRadius(5.f);
+	s.setPosition(mText.getOrigin());
+	std::cout << mText.getPosition() << "\n";
 }
 
 bool TitleState::handleEvent(const sf::Event& event)

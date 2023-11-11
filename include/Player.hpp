@@ -30,7 +30,7 @@ private:
 	std::map<sf::Keyboard::Key, Action> mKeyBinding;
 	std::map<Action, Command> mActionBinding;
 
-	float mPlayerSpeed = 10;
+	float mPlayerSpeed = 100;
 };
 
 struct PlayerMover

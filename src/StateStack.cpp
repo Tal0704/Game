@@ -20,7 +20,7 @@ void StateStack::handleEvent(const sf::Event& event)
 	for (auto itr = mStack.rbegin(); itr != mStack.rend(); ++itr)
 	{
 		if (!(*itr)->handleEvent(event))
-			return;
+			break;
 	}
 	applyPendingChanges();
 }
@@ -30,7 +30,7 @@ void StateStack::update(sf::Time dt)
 	for (auto itr = mStack.rbegin(); itr != mStack.rend(); ++itr)
 	{
 		if (!(*itr)->update(dt))
-			return;
+			break;
 	}
 	applyPendingChanges();
 }
@@ -85,4 +85,9 @@ StateStack::PendingChange::PendingChange(Action action, States::ID stateID)
 	, stateID(stateID)
 {
 
+}
+
+bool StateStack::isEmpty()
+{
+	return mStack.empty();
 }

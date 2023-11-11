@@ -1,5 +1,4 @@
 #include <World.hpp>
-#include <iostream>
 #include <SpriteNode.hpp>
 #include <Helpers.hpp>
 
@@ -25,9 +24,6 @@ void World::update(const sf::Time& dt)
 	}
 
 	mSceneGraph.update(dt);
-	auto characterPosition = mCharacter->getPosition();
-	auto textureSize = mTextures.get(Textures::Background).getSize();
-	mView.setCenter(characterPosition.x, textureSize.y / 2);
 
 	sf::Vector2f position = mCharacter->getPosition();
 	sf::FloatRect borderDistance = mCharacter->getGlobalBounds();
@@ -65,10 +61,8 @@ void World::buildScene()
 	sf::Texture& charTxt = mTextures.get(Textures::MainCharacter);
 	std::unique_ptr<Character> character = std::make_unique<Character>(charTxt);
 
-	const auto& pos = character->getOrigin();
-	const auto& bounds = character->getGlobalBounds();
-
-	character->setOrigin(bounds.left + bounds.width / 2, bounds.top + bounds.height / 2);
+	auto bounds = character->getGlobalBounds();
+	character->setOrigin(bounds.left + bounds.width / 2.f, bounds.top + bounds.height / 2.f);
 
 	character->setPosition(100.f, 100.f);
 	mCharacter = character.get();

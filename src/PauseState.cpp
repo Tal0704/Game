@@ -17,9 +17,8 @@ PauseState::PauseState(StateStack& state, Context context)
 
 	mPausedText.setString("Game is paused");
 	mPausedText.setPosition(sf::Vector2f(getContext().window->getSize()) / 2.f);
-	mInstructionText.setString("Press Esc again to continue or Backspace to return to main menu");
+	mInstructionText.setString("Press Esc again to continue or Enter to return to main menu");
 	mInstructionText.setPosition(sf::Vector2f(getContext().window->getSize()) / 2.f);
-	
 }
 
 void PauseState::draw()
@@ -39,7 +38,10 @@ void PauseState::draw()
 bool PauseState::handleEvent(const sf::Event& event)
 {
 	using sf::Keyboard;
-	if(event.key.code == Keyboard::Backspace)
+	if (event.type != sf::Event::KeyPressed)
+		return false;
+
+	if(event.key.code == Keyboard::Enter)
 	{
 		requestStateClear();
 		requestStackPush(States::Game);

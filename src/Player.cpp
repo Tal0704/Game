@@ -1,4 +1,5 @@
 #include "Player.hpp"
+#include <SFML/Window/Keyboard.hpp>
 #include <iostream>
 #include <Helpers.hpp>
 
@@ -77,6 +78,7 @@ sf::Keyboard::Key Player::getAssignedKey(Action action) const
 		if (pair.second == action)
 			return pair.first;
 	}
+	return sf::Keyboard::Escape;
 }
 
 bool Player::isRealTimeAction(Action action)

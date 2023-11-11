@@ -13,10 +13,10 @@ std::ostream& operator<<(std::ostream& stream, const sf::Vector2<Ty>& v)
 template<typename type>
 void centerOrigin(type shape)
 {
-	auto globalBounds = shape.getGlobalBounds();
+	auto localBounds = shape.getLocalBounds();
 	sf::Vector2f newOrigion;
-	newOrigion.x = globalBounds.left + globalBounds.width / 2;
-	newOrigion.y = globalBounds.top + globalBounds.height / 2;
+	newOrigion.x = localBounds.left + localBounds.width / 2;
+	newOrigion.y = localBounds.top + localBounds.height / 2;
 	shape.setOrigin(newOrigion);
 }
 
