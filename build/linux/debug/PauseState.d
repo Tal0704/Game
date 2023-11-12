@@ -47,7 +47,8 @@ build/linux/debug/PauseState.o: src/PauseState.cpp include/Fonts.hpp \
   Dependencies/SFML/include/SFML/Graphics/Transformable.hpp \
   Dependencies/SFML/include/SFML/Graphics/VertexArray.hpp \
   Dependencies/SFML/include/SFML/Graphics/RectangleShape.hpp \
-  Dependencies/SFML/include/SFML/Graphics/Shape.hpp include/Helpers.hpp
+  Dependencies/SFML/include/SFML/Graphics/Shape.hpp include/Helpers.hpp \
+  Dependencies/SFML/include/SFML/Graphics/Sprite.hpp
 
 include/Fonts.hpp:
 
@@ -160,3 +161,5 @@ Dependencies/SFML/include/SFML/Graphics/RectangleShape.hpp:
 Dependencies/SFML/include/SFML/Graphics/Shape.hpp:
 
 include/Helpers.hpp:
+
+Dependencies/SFML/include/SFML/Graphics/Sprite.hpp:

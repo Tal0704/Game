@@ -18,8 +18,6 @@ private:
 	sf::Sprite mBackground;
 	sf::Text mText;
 
-	sf::CircleShape s;
-
 	bool mShowText;
 	sf::Time mTextEffectTime;
 };

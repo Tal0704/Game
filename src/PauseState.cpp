@@ -12,13 +12,15 @@ PauseState::PauseState(StateStack& state, Context context)
 	mPausedText.setFont(getContext().fonts->get(Fonts::Sansation));
 	mInstructionText.setFont(getContext().fonts->get(Fonts::Sansation));
 
-	centerOrigin(mPausedText);
-	centerOrigin(mInstructionText);
+	sf::RenderWindow& window = *context.window;
 
 	mPausedText.setString("Game is paused");
-	mPausedText.setPosition(sf::Vector2f(getContext().window->getSize()) / 2.f);
-	mInstructionText.setString("Press Esc again to continue or Enter to return to main menu");
-	mInstructionText.setPosition(sf::Vector2f(getContext().window->getSize()) / 2.f);
+	centerOrigin(mPausedText);
+	mPausedText.setPosition(sf::Vector2f(window.getSize()) / 2.f);
+	mInstructionText.setString("Press Enter to continue or\nEscape to return to main menu");
+	centerOrigin(mInstructionText);
+	mInstructionText.setPosition(sf::Vector2f(window.getSize()) / 2.f);
+	mInstructionText.move(0.f, 50.f);
 }
 
 void PauseState::draw()

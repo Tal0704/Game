@@ -4,9 +4,7 @@
 #include <Fonts.hpp>
 #include <Textures.hpp>
 #include <Helpers.hpp>
-#include <iostream>
 #include <SFML/Graphics/RenderWindow.hpp>
-
 
 TitleState::TitleState(StateStack& stack, Context context)
 	: State(stack, context)
@@ -14,16 +12,16 @@ TitleState::TitleState(StateStack& stack, Context context)
 	sf::Texture& texture = context.textures->get(Textures::TitleScreen);
 	sf::Font& font = context.fonts->get(Fonts::Sansation);
 
-//	sf::RenderWindow& window = *context.window;
+	sf::RenderWindow& window = *context.window;
 
 	mBackground.setTexture(texture);
 	centerOrigin(mBackground);
-	mBackground.setPosition(0.f, 0.f);
+	mBackground.setPosition(sf::Vector2f(window.getSize()) / 2.f);
 
 	mText.setString("Press any key to continue!");
 	mText.setFont(font);
 	centerOrigin(mText);
-
+	mText.setPosition(sf::Vector2f(window.getSize()) / 2.f);
 }
 
 bool TitleState::handleEvent(const sf::Event& event)
@@ -56,6 +54,5 @@ void TitleState::draw()
 
 	window.draw(mBackground);
 	window.draw(mText);
-	window.draw(s);
 }
 

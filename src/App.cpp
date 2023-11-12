@@ -14,6 +14,7 @@ Application::Application()
 	, mPlayer()
 	, mStateStack(State::Context(mWindow, mTextures, mFonts, mPlayer))
 {
+
 	loadResources();
 	mStatisticsText.setFont(mFonts.get(Fonts::Sansation));
 	mStatisticsText.setCharacterSize(10);

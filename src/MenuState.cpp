@@ -9,18 +9,23 @@ MenuState::MenuState(StateStack& stack, Context context)
 	sf::Texture& texture = context.textures->get(Textures::TitleScreen);
 	sf::Font& font = context.fonts->get(Fonts::Sansation);
 
+	sf::RenderWindow& window = *context.window;
+
 	mBackgroundSprite.setTexture(texture);
 	centerOrigin(mBackgroundSprite);
-	mBackgroundSprite.setPosition(0.f, 0.f);
+	mBackgroundSprite.setPosition(sf::Vector2f(window.getSize()) / 2.f);
 
-	sf::Text playOption;
-	playOption.setFont(font);
-	playOption.setString("Play");
-	playOption.setPosition(0.f, -50.f);
-	mOptions.push_back(playOption);
-	playOption.setString("quit");
-	playOption.move(0, -50);
-	mOptions.push_back(playOption);
+	sf::Text text;
+	text.setFont(font);
+	text.setString("Play");
+	centerOrigin(text);
+	text.setPosition(sf::Vector2f(window.getSize()) / 2.f);
+	mOptions.push_back(text);
+
+	text.setString("quit");
+	centerOrigin(text);
+	text.move(0, 50.f);
+	mOptions.push_back(text);
 
 	updateOptionText();
 }

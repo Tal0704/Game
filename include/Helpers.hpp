@@ -1,7 +1,10 @@
 #pragma once
-#include <SFML/Graphics/Shape.hpp>
+
 #include <iostream>
+#include <SFML/Graphics/Shape.hpp>
 #include <SFML/System/Vector2.hpp>
+#include <SFML/Graphics/Text.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 
 template <typename Ty>
 std::ostream& operator<<(std::ostream& stream, const sf::Vector2<Ty>& v)
@@ -10,13 +13,6 @@ std::ostream& operator<<(std::ostream& stream, const sf::Vector2<Ty>& v)
 	return stream;
 }
 
-template<typename type>
-void centerOrigin(type shape)
-{
-	auto localBounds = shape.getLocalBounds();
-	sf::Vector2f newOrigion;
-	newOrigion.x = localBounds.left + localBounds.width / 2;
-	newOrigion.y = localBounds.top + localBounds.height / 2;
-	shape.setOrigin(newOrigion);
-}
+void centerOrigin(sf::Sprite& shape);
 
+void centerOrigin(sf::Text& text);

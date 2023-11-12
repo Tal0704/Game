@@ -1,8 +1,24 @@
 build/linux/debug/main.o: src/main.cpp include/App.hpp \
+  Dependencies/SFML/include/SFML/Graphics/CircleShape.hpp \
+  Dependencies/SFML/include/SFML/Graphics/Export.hpp \
+  Dependencies/SFML/include/SFML/Config.hpp \
+  Dependencies/SFML/include/SFML/Graphics/Shape.hpp \
+  Dependencies/SFML/include/SFML/Graphics/Drawable.hpp \
+  Dependencies/SFML/include/SFML/Graphics/RenderStates.hpp \
+  Dependencies/SFML/include/SFML/Graphics/BlendMode.hpp \
+  Dependencies/SFML/include/SFML/Graphics/Transform.hpp \
+  Dependencies/SFML/include/SFML/Graphics/Rect.hpp \
+  Dependencies/SFML/include/SFML/System/Vector2.hpp \
+  Dependencies/SFML/include/SFML/System/Vector2.inl \
+  Dependencies/SFML/include/SFML/Graphics/Rect.inl \
+  Dependencies/SFML/include/SFML/Graphics/Transformable.hpp \
+  Dependencies/SFML/include/SFML/Graphics/VertexArray.hpp \
+  Dependencies/SFML/include/SFML/Graphics/Vertex.hpp \
+  Dependencies/SFML/include/SFML/Graphics/Color.hpp \
+  Dependencies/SFML/include/SFML/Graphics/PrimitiveType.hpp \
   include/StateStack.hpp include/State.hpp \
   Dependencies/SFML/include/SFML/System/Time.hpp \
   Dependencies/SFML/include/SFML/System/Export.hpp \
-  Dependencies/SFML/include/SFML/Config.hpp \
   Dependencies/SFML/include/SFML/Window/Event.hpp \
   Dependencies/SFML/include/SFML/Window/Joystick.hpp \
   Dependencies/SFML/include/SFML/Window/Export.hpp \
@@ -12,23 +28,12 @@ build/linux/debug/main.o: src/main.cpp include/App.hpp \
   Dependencies/SFML/include/SFML/System/String.inl \
   Dependencies/SFML/include/SFML/Window/Keyboard.hpp \
   Dependencies/SFML/include/SFML/Window/Mouse.hpp \
-  Dependencies/SFML/include/SFML/System/Vector2.hpp \
-  Dependencies/SFML/include/SFML/System/Vector2.inl \
   Dependencies/SFML/include/SFML/Window/Sensor.hpp \
   Dependencies/SFML/include/SFML/System/Vector3.hpp \
   Dependencies/SFML/include/SFML/System/Vector3.inl \
   Dependencies/SFML/include/SFML/Graphics/RenderWindow.hpp \
-  Dependencies/SFML/include/SFML/Graphics/Export.hpp \
   Dependencies/SFML/include/SFML/Graphics/RenderTarget.hpp \
-  Dependencies/SFML/include/SFML/Graphics/Color.hpp \
-  Dependencies/SFML/include/SFML/Graphics/Rect.hpp \
-  Dependencies/SFML/include/SFML/Graphics/Rect.inl \
   Dependencies/SFML/include/SFML/Graphics/View.hpp \
-  Dependencies/SFML/include/SFML/Graphics/Transform.hpp \
-  Dependencies/SFML/include/SFML/Graphics/BlendMode.hpp \
-  Dependencies/SFML/include/SFML/Graphics/RenderStates.hpp \
-  Dependencies/SFML/include/SFML/Graphics/PrimitiveType.hpp \
-  Dependencies/SFML/include/SFML/Graphics/Vertex.hpp \
   Dependencies/SFML/include/SFML/System/NonCopyable.hpp \
   Dependencies/SFML/include/SFML/Graphics/Image.hpp \
   Dependencies/SFML/include/SFML/Window/Window.hpp \
@@ -63,11 +68,6 @@ build/linux/debug/main.o: src/main.cpp include/App.hpp \
   Dependencies/SFML/include/SFML/Window/Clipboard.hpp \
   Dependencies/SFML/include/SFML/Window/Context.hpp \
   Dependencies/SFML/include/SFML/Window/Touch.hpp \
-  Dependencies/SFML/include/SFML/Graphics/CircleShape.hpp \
-  Dependencies/SFML/include/SFML/Graphics/Shape.hpp \
-  Dependencies/SFML/include/SFML/Graphics/Drawable.hpp \
-  Dependencies/SFML/include/SFML/Graphics/Transformable.hpp \
-  Dependencies/SFML/include/SFML/Graphics/VertexArray.hpp \
   Dependencies/SFML/include/SFML/Graphics/ConvexShape.hpp \
   Dependencies/SFML/include/SFML/Graphics/RectangleShape.hpp \
   Dependencies/SFML/include/SFML/Graphics/RenderTexture.hpp \
@@ -82,6 +82,40 @@ build/linux/debug/main.o: src/main.cpp include/App.hpp \
 
 include/App.hpp:
 
+Dependencies/SFML/include/SFML/Graphics/CircleShape.hpp:
+
+Dependencies/SFML/include/SFML/Graphics/Export.hpp:
+
+Dependencies/SFML/include/SFML/Config.hpp:
+
+Dependencies/SFML/include/SFML/Graphics/Shape.hpp:
+
+Dependencies/SFML/include/SFML/Graphics/Drawable.hpp:
+
+Dependencies/SFML/include/SFML/Graphics/RenderStates.hpp:
+
+Dependencies/SFML/include/SFML/Graphics/BlendMode.hpp:
+
+Dependencies/SFML/include/SFML/Graphics/Transform.hpp:
+
+Dependencies/SFML/include/SFML/Graphics/Rect.hpp:
+
+Dependencies/SFML/include/SFML/System/Vector2.hpp:
+
+Dependencies/SFML/include/SFML/System/Vector2.inl:
+
+Dependencies/SFML/include/SFML/Graphics/Rect.inl:
+
+Dependencies/SFML/include/SFML/Graphics/Transformable.hpp:
+
+Dependencies/SFML/include/SFML/Graphics/VertexArray.hpp:
+
+Dependencies/SFML/include/SFML/Graphics/Vertex.hpp:
+
+Dependencies/SFML/include/SFML/Graphics/Color.hpp:
+
+Dependencies/SFML/include/SFML/Graphics/PrimitiveType.hpp:
+
 include/StateStack.hpp:
 
 include/State.hpp:
@@ -89,8 +123,6 @@ include/State.hpp:
 Dependencies/SFML/include/SFML/System/Time.hpp:
 
 Dependencies/SFML/include/SFML/System/Export.hpp:
-
-Dependencies/SFML/include/SFML/Config.hpp:
 
 Dependencies/SFML/include/SFML/Window/Event.hpp:
 
@@ -110,10 +142,6 @@ Dependencies/SFML/include/SFML/Window/Keyboard.hpp:
 
 Dependencies/SFML/include/SFML/Window/Mouse.hpp:
 
-Dependencies/SFML/include/SFML/System/Vector2.hpp:
-
-Dependencies/SFML/include/SFML/System/Vector2.inl:
-
 Dependencies/SFML/include/SFML/Window/Sensor.hpp:
 
 Dependencies/SFML/include/SFML/System/Vector3.hpp:
@@ -122,27 +150,9 @@ Dependencies/SFML/include/SFML/System/Vector3.inl:
 
 Dependencies/SFML/include/SFML/Graphics/RenderWindow.hpp:
 
-Dependencies/SFML/include/SFML/Graphics/Export.hpp:
-
 Dependencies/SFML/include/SFML/Graphics/RenderTarget.hpp:
 
-Dependencies/SFML/include/SFML/Graphics/Color.hpp:
-
-Dependencies/SFML/include/SFML/Graphics/Rect.hpp:
-
-Dependencies/SFML/include/SFML/Graphics/Rect.inl:
-
 Dependencies/SFML/include/SFML/Graphics/View.hpp:
-
-Dependencies/SFML/include/SFML/Graphics/Transform.hpp:
-
-Dependencies/SFML/include/SFML/Graphics/BlendMode.hpp:
-
-Dependencies/SFML/include/SFML/Graphics/RenderStates.hpp:
-
-Dependencies/SFML/include/SFML/Graphics/PrimitiveType.hpp:
-
-Dependencies/SFML/include/SFML/Graphics/Vertex.hpp:
 
 Dependencies/SFML/include/SFML/System/NonCopyable.hpp:
 
@@ -223,16 +233,6 @@ Dependencies/SFML/include/SFML/Window/Clipboard.hpp:
 Dependencies/SFML/include/SFML/Window/Context.hpp:
 
 Dependencies/SFML/include/SFML/Window/Touch.hpp:
-
-Dependencies/SFML/include/SFML/Graphics/CircleShape.hpp:
-
-Dependencies/SFML/include/SFML/Graphics/Shape.hpp:
-
-Dependencies/SFML/include/SFML/Graphics/Drawable.hpp:
-
-Dependencies/SFML/include/SFML/Graphics/Transformable.hpp:
-
-Dependencies/SFML/include/SFML/Graphics/VertexArray.hpp:
 
 Dependencies/SFML/include/SFML/Graphics/ConvexShape.hpp:
 

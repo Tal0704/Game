@@ -1,4 +1,5 @@
 #pragma once
+#include <SFML/Graphics/CircleShape.hpp>
 #include <StateStack.hpp>
 #include <Player.hpp>
 #include <World.hpp>

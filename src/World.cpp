@@ -54,9 +54,8 @@ void World::buildScene()
 	sf::Texture& txt = mTextures.get(Textures::Background);
 	txt.setRepeated(true);
 	std::unique_ptr<SpriteNode> background = std::make_unique<SpriteNode>(txt, rect);
-	background->setPosition(0.f, 0.f);
+	background->setPosition(sf::Vector2f(mWindow.getSize()) / 2.f);
 	mLayers[Layer::Background]->attachChild(std::move(background));
-
 
 	sf::Texture& charTxt = mTextures.get(Textures::MainCharacter);
 	std::unique_ptr<Character> character = std::make_unique<Character>(charTxt);
@@ -64,13 +63,9 @@ void World::buildScene()
 	auto bounds = character->getGlobalBounds();
 	character->setOrigin(bounds.left + bounds.width / 2.f, bounds.top + bounds.height / 2.f);
 
-	character->setPosition(100.f, 100.f);
+	character->setPosition(sf::Vector2f(mWindow.getSize()) / 2.f);
 	mCharacter = character.get();
 	mLayers[Layer::ForeGround]->attachChild(std::move(character));
-
-	mView.setSize(sf::Vector2f(mWindow.getSize()));
-	auto p = mCharacter->getPosition();
-	mView.setCenter(p.x, 0);
 }
 
 CommandQueue& World::getCommandQueue()
